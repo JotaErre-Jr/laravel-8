@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,4 +19,4 @@ use Illuminate\Support\Facades\Route;
     #return view('welcome');
 });*/
 
-Route::get('/', ['uses' => 'Controller@homepage']);
+Route::get('/', [Controller::class, 'homepage']);
