@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,3 +13,11 @@
     ?>
 </body>
 </html>
+=======
+<h1>index de post</h1>
+
+@foreach($posts as $post) 
+    <p>{{$post->title}}</p></br>
+    <p>{{$post->content}}</p>
+@endforeach
+>>>>>>> e103c649e25e78f6e15689bb92394d283f892e49

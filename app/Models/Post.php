@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     use HasFactory;
+<<<<<<< HEAD
 
     /*
     *O model já referência a tabela 'post' na migration
@@ -16,4 +17,6 @@ class Post extends Model
     */ 
     //opcional
     protected $table = 'post';
+=======
+>>>>>>> e103c649e25e78f6e15689bb92394d283f892e49
 }
