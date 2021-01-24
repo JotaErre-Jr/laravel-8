@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +20,5 @@ use App\Http\Controllers\Controller;
     #return view('welcome');
 });*/
 
-Route::get('/', [Controller::class, 'homepage']);
+Route::get('/posts', [PostController::class, 'index']);
+//Route::get('/', [Controller::class, 'homepage']);
