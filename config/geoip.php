@@ -157,9 +157,9 @@ return [
         'lat' => 41.31,
         'lon' => -72.92,
         'timezone' => 'America/São Paulo',
-        'continent' => 'NA',
+        'continent' => 'SA',
         'default' => true,
-        'currency' => 'USD',
+        'currency' => 'BRL',
     ],
 
 ];

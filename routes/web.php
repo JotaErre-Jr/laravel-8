@@ -22,18 +22,27 @@ use Illuminate\Http\Request;
 });*/
 
 Route::get('/', [Controller::class, 'homepage']);
+Route::get('/geoip', [Controller::class, 'getUserIpAddr']);
 
-Route::get('/geoip',function(){
+//Rota tras todas as informações
+/*Route::get('/geoip',function(){
     $geoipInfo = geoip()->getLocation($_SERVER['REMOTE_ADDR']);
     return $geoipInfo->toArray();
 
-});
+});*/
 
+//Rota traz apenas o IP
 /*Route::get('/geoip',function(){
     $geoipInfo = geoip()->getClientIp($_SERVER['REMOTE_ADDR']);
-    return $geoipInfo()->getIp();
+    return $geoipInfo;
 
 });*/
+
+/*Route::get('/geoip',function(Request $request){
+    return $request->ip();
+
+
+});/*
 
 Route::get('/posts', [PostController::class, 'index']);
 
