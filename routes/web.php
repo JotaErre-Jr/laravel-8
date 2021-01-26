@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\PostController;
+use Illuminate\Http\Request;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,10 +23,17 @@ use App\Http\Controllers\PostController;
 
 Route::get('/', [Controller::class, 'homepage']);
 
-Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
-Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
-
-Route::get('/geoip', function(){
+Route::get('/geoip',function(){
     $geoipInfo = geoip()->getLocation($_SERVER['REMOTE_ADDR']);
-    Return $geoipInfo->toArray();
+    return $geoipInfo->toArray();
+
 });
+
+/*Route::get('/geoip',function(){
+    $geoipInfo = geoip()->getClientIp($_SERVER['REMOTE_ADDR']);
+    return $geoipInfo()->getIp();
+
+});*/
+
+Route::get('/posts', [PostController::class, 'index']);
+
