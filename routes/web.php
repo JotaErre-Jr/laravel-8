@@ -3,10 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\PostController;
-<<<<<<< HEAD
+use Illuminate\Http\Request;
 
-=======
->>>>>>> e103c649e25e78f6e15689bb92394d283f892e49
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,10 +21,19 @@ use App\Http\Controllers\PostController;
     #return view('welcome');
 });*/
 
-<<<<<<< HEAD
-Route::get('/posts', [PostController::class, 'index']);
-//Route::get('/', [Controller::class, 'homepage']);
-=======
 Route::get('/', [Controller::class, 'homepage']);
+
+Route::get('/geoip',function(){
+    $geoipInfo = geoip()->getLocation($_SERVER['REMOTE_ADDR']);
+    return $geoipInfo->toArray();
+
+});
+
+/*Route::get('/geoip',function(){
+    $geoipInfo = geoip()->getClientIp($_SERVER['REMOTE_ADDR']);
+    return $geoipInfo()->getIp();
+
+});*/
+
 Route::get('/posts', [PostController::class, 'index']);
->>>>>>> e103c649e25e78f6e15689bb92394d283f892e49
+
