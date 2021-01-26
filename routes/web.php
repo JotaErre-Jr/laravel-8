@@ -20,4 +20,11 @@ use App\Http\Controllers\PostController;
 });*/
 
 Route::get('/', [Controller::class, 'homepage']);
-Route::get('/posts', [PostController::class, 'index']);
+
+Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
+Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
+
+Route::get('/geoip', function(){
+    $geoipInfo = geoip()->getLocation($_SERVER['REMOTE_ADDR']);
+    Return $geoipInfo->toArray();
+});
