@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\PostController;
 use Illuminate\Http\Request;
+use App\Http\Controllers\GeoLocationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +23,6 @@ use Illuminate\Http\Request;
 });*/
 
 Route::get('/', [Controller::class, 'homepage']);
-Route::get('/geoip', [Controller::class, 'getUserIpAddr']);
 
 //Rota tras todas as informações
 /*Route::get('/geoip',function(){
@@ -38,11 +38,13 @@ Route::get('/geoip', [Controller::class, 'getUserIpAddr']);
 
 });*/
 
-/*Route::get('/geoip',function(Request $request){
+/*Route::get('/geoip',function (Request $request){
     return $request->ip();
 
 
-});/*
+});*/
+Route::get('/geoip', [PostController::class, 'indexIp']);
+//Route::get('get-address-from-ip', [GeoLocationController::class, 'indexIp']);
 
 Route::get('/posts', [PostController::class, 'index']);
 

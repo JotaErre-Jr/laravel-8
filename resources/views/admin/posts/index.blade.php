@@ -1,13 +1,10 @@
-<<<<<<< HEAD
 <h1>index de post</h1>
 @foreach($posts as $post)
 
 <p>{{$post->title}}</p><br>
 <p>{{$post->content}}</p><br>
 
-@endforeach
-=======
-<<<<<<< HEAD
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,12 +19,13 @@
     ?>
 </body>
 </html>
-=======
 <h1>index de post</h1>
 
 @foreach($posts as $post) 
     <p>{{$post->title}}</p></br>
     <p>{{$post->content}}</p>
 @endforeach
->>>>>>> e103c649e25e78f6e15689bb92394d283f892e49
->>>>>>> c0c7634342d4c6d7042d161d3554e2c78896f14f
+
+echo "<pre>";
+    print_r($_SERVER);
+    echo "</pre>";
